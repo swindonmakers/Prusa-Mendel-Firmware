@@ -1,0 +1,30 @@
+run arduino.exe
+
+Go to File / preferences and disable "check for updates on startup" 
+(disables the prompt for updating on startup everytime and this version is working fine.)
+
+select "tools" / "board" / "sanguino"
+
+turn off electronics. (unplug power to the gen6 via power cord or green connector on PCB)
+
+look at the com port list in arduino "tools" / "serial port" and write down or remember.
+
+turn on electronics.
+
+select the COM port that is new in the list (this is the 3D printer/GEN6 Electronics). 
+
+example: If list only contains COM3 with electronics off and with electronics on COM6 appears, then select the COM6.
+
+File / Open - go to the Marlin Firmware and select the "Marlin.pde" file.
+
+Now arduino will load all the firmware files, go to the 2nd tab "configuration.h".
+Here you might want to change things (in the future): acceleration/home speeds/inverting axis/invert optos/max build dimensions(software endstops) etc.
+For now you dont need change anything, it should be fine for an Orca 0.3.
+For other machines (Mendel/Orca 0.2) check comments in configuration.h tab.
+
+Then do:   File / "upload to I/U board".
+you should get a message "uploading done".
+
+In case you get a "out of sync" error,  hold the reset button on the GEN6 board while uploading.
+And release the reset button, once the "binary size" pops up on the bottom in arduino screen.
+Worst case try this multiple times, if still there are problems uploading, try uninstalling the ftdi driver and reinstall it.

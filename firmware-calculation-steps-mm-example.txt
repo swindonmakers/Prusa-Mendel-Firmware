@@ -1,0 +1,30 @@
+Here is an example how to finetune X and Y for example.
+
+make sure you know current values you use (check after connecting the values)
+
+For this example I will use X and Y steps p/mm current value of 32.00
+
+Then run a test print for example a low square of 100x100mm 
+
+Then measure the output. for example the print is not 100x100, 
+but the printed part is 98mm in X and 101mm in Y.
+
+I always calculate it like this:
+- i send the machine 100mm x 32.00 steps = 3200 steps
+- machine prints in X 98mm, and in y 101mm.
+- so new value for X should be: 3200 / 98 = 32.65 steps /mm
+- new value for y should be: 3200 / 101 = 31.68 steps /mm
+
+Change these values in configuration.h to the new ones and upload new firmware to your gen6 board.
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {32.65, 31.68, 960, 167}  // default steps per unit x,y,z,e
+
+Then run a new print and verify you made the right changes.
+
+For the extruder this goes simular, but here you need to measure the length of the filament going in.
+So you can do a manual extrusion in printrun, make sure hotend is hot / filled etc, 
+then at 100mm length make a mark and in printrun fill in 100mm and press extrude button.
+then measure the true length and correct value like above.
+(note for v10B i recently did more finetuning and current value i use for E steps is 167 steps/mm
+(instead of 176 steps/mm)
+for even more finetuning you can do 200mm after the 100mm is correct to get it even more accurate.
