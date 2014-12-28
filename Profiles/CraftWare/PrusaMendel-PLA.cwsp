@@ -2,7 +2,7 @@
     "BedTemp": 55,
     "BedTempEnabled": true,
     "BrimCount": 3,
-    "BrimEnable": true,
+    "BrimEnable": false,
     "DrawSpeed": 45,
     "EFactor_HShell": 1,
     "EFactor_Infill": 1,
