@@ -305,9 +305,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
-#define X_MAX_POS 180
+#define X_MAX_POS 185
 #define X_MIN_POS 0
-#define Y_MAX_POS 180
+#define Y_MAX_POS 200
 #define Y_MIN_POS 0
 #define Z_MAX_POS 115
 #define Z_MIN_POS 0
@@ -385,7 +385,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {64.2,64.1,2560,95.5} // default steps per unit
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {63.75,64.09,2565,95.5}   // default steps per unit
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 4,  80}        // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,5000}      // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
